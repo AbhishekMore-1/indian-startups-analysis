@@ -107,11 +107,6 @@ def app():
         data.drop([2602,2603,2604,2605,2606,2607,2608,2609,2610,2611], inplace = True)
         data.reset_index(drop=True, inplace=True)
 
-        # for i in range (0, len(data["AmountInUSD"])):
-        #     data["AmountInUSD"][i]=re.sub('\D',"",str(data["AmountInUSD"][i]))
-
-        # data["AmountInUSD"]=pd.to_numeric(data["AmountInUSD"])
-
         for i in range (0, len(data["StartupName"])):
             data["StartupName"][i]=re.sub('xc2xa0',"",str(data["StartupName"][i]))
 
@@ -130,7 +125,7 @@ def app():
 
         return data, temp1, text
 
-    st.title('Startups in India Visualization')
+    st.title('Indian Startups Visualization')
     st.text("""
     This dataset has funding information of the Indian startups from January 2015 
     till recent 2020. It includes columns with the date funded, the city the 
